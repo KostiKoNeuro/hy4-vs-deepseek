@@ -1,0 +1,20 @@
+**Menu Screen: 8.5/10** | **Gameplay Frame: 7/10**
+
+### Visual Breakdown
+
+* **Hero Car Grounding & Lighting:** The car model features slick synthwave rear-light styling, but contact grounding is weak. The ground reflection is an indistinct, static pink diffuse halo rather than a Fresnel road reflection, making the vehicle float slightly above the tarmac rather than biting into it.
+* **Road Wetness & Depth:** The asphalt has a smooth sheen and clean horizon convergence, but the "wet road" illusion falls flat. It lacks specular screen-space reflections of the neon sun, overhead signs, or taillights, presenting more like polished dark acrylic than rain-soaked asphalt.
+* **Traffic Legibility:** Poor at distance. Distant vehicles melt into tiny pink/red pixel clusters against the billboard and streetlamp glare, making obstacle silhouette identification difficult until dangerous proximity.
+* **Sense of Speed:** Underwhelming for 200 km/h. While the roadside dashed lines give perspective, static linear rain streaks and crisp guardrails fail to communicate velocity. There is no peripheral motion blur, camera shake, or dynamic tire spray.
+* **Street Lighting & Atmosphere:** The vector skyline silhouette, retro sun, and cyan/magenta guardrail neon strips deliver strong outrun flavor. However, the streetlamps project sterile, geometric light cones with hard edges that do not fall off naturally across the road surface.
+* **Artifacts:** Rain streaks cross uniformly across all depth planes with identical alpha/scale; tire spray/mist is completely absent; the palm trees read as flat, cardboard 2D cutouts with noticeable silhouette clipping.
+
+---
+
+### Top 5 Impactful Fixes
+
+1. **Mirror Road Reflections:** Implement screen-space reflections (or a mirrored vertical flip pass with vertical falloff) for the neon sun, taillights, and streetlamp pools across the asphalt to establish genuine wet surface specularity.
+2. **Contact Shadow & Tire Grounding:** Replace the soft pink ambient blur beneath the hero car with a tight, high-contrast ambient occlusion contact shadow directly under the tire treads, paired with subtle wet tire spray particles.
+3. **Traffic Silhouette & Taillight Punch:** Add prominent, blooming red brake flares and high-contrast bounding glows to traffic cars so their lane positions register instantly against the bright city horizon.
+4. **Peripheral Speed Streaks & Lens Warp:** Apply radial motion blur/chromatic aberration along the screen edges and stretch rain streaks dynamically along the velocity vector as speed approaches 200+ km/h.
+5. **Volumetric Light Falloff:** Soften the streetlamp light cones with exponential distance falloff and add atmospheric haze/fog patches along the highway floor to break up the sterile vector lines.

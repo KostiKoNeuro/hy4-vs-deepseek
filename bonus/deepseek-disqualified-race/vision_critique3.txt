@@ -1,0 +1,29 @@
+### Art Director's Breakdown
+
+**Menu Score: 7.5/10**  
+Clean synthwave graphic design with solid typography and palette coherence. However, the player car at bottom-center is dull, underlit, and completely disconnected from the road surface (floating without contact shadows). The diagonal road lines abruptly terminate into the bottom-left text block, creating an unresolved collision between 2D UI and 3D perspective.
+
+**Gameplay Score: 5.5/10**  
+It looks like a static vector illustration, not an arcade racer moving at 205 km/h. There is zero sensation of speed: no radial blur, no particle streaks, and the rain streaks are static needle lines with harsh clipping. Visible rendering artifacts include harsh polygon sorting around the billboard base, visible vertical banding in the road reflection shaders, and the player car lacking any bloom, exhaust glow, or wheel rotation feedback.
+
+---
+
+### 6 Highest-Impact Changes Needed
+
+1. **Player Vehicle Illumination & Grounding (Bottom-Center - Both)**  
+   The hero car looks dead. Add intensely blooming neon tail-light light strips, underglow reflecting onto wet asphalt, and an ambient occlusion drop shadow. At 205 km/h, add dynamic exhaust flame pops and trailing light streaks.
+
+2. **Sense of Speed & Camera FX (Full Frame - Gameplay)**  
+   Introduce dynamic radial motion blur focused on screen edges, subtle chromatic aberration, camera shake that scales with speed, and road-level wind/speed particle lines rushing past the car flanks to sell acceleration.
+
+3. **Wet Road PBR Shader & Screen-Space Reflections (Lower Half - Gameplay)**  
+   Replace the flat, muddy mirror reflection under the yellow traffic car and lane markers with high-contrast screen-space reflections (SSR) and localized wet-road specular highlights caught from the sun, streetlamps, and tail lights.
+
+4. **Dynamic Overhead Street Lighting (Midground / Road Edges - Gameplay)**  
+   The streetlamp on the far right stands isolated and inactive. Turn streetlamps into repetitive overhead or curbside light sources casting dynamic light pools across the road lanes, creating rhythmic visual beats as you drive past them.
+
+5. **Menu Layout Hierarchy & Car Integration (Bottom Third - Menu)**  
+   Move the player car forward or angle it into a dynamic 3/4 beauty pose. Push the "Driver Brief" and "Start Engine" controls onto distinct, semi-transparent frosted-glass HUD cards so the road perspective doesn’t awkwardly crash into raw UI text.
+
+6. **Traffic Car Visual Clarity (Center Horizon - Gameplay)**  
+   Traffic vehicles (e.g., the yellow car) look flat and cartoonish. Add blinding red retro tail-light blooms, headlamp throw beams projecting forward, and silhouette edge-lighting to make obstacles instantly readable at high speeds against the dark horizon.

@@ -1,0 +1,19 @@
+**Art Director Review**
+
+**Visual Polish: 7.5/10** | **Sense of Motion: 6/10**
+
+### Visual Breakdown
+* **Player Grounding:** *Mixed.* The glossy reflection under the chassis helps, but there is zero hard ambient occlusion (contact shadow) directly beneath the tire contact patches, leaving it feeling slightly detached. Tire spray is practically invisible—only faint whisps exist. 
+* **Road Wetness:** *Passable, but sterile.* The smooth specular gradient mimics glossy asphalt, but lacks localized puddle variation, distortion, or ripples.
+* **Traffic Legibility:** *Strong.* The AI vehicles stand out crisply with vibrant taillights and localized road reflections.
+* **Streetlamps:** *Failing.* The left lamp casts a tiny, dim circular puddle at its pole base rather than casting a trapezoidal light cone forward across the driving lanes.
+* **Bugs & Awkward Shapes:** The "SECTOR 02" center overlay has dirty, low-contrast text aliasing clipping right over the sun. The right-hand lane dashes stretch and skew unnaturally flat compared to the lane angle.
+
+---
+
+### Top 4 Highest-Impact Fixes
+
+1. **Drop a Heavy Contact Shadow & Ground Spray:** Add a dark, tight occlusion shadow directly under the player’s tires. Increase the opacity, width, and particle velocity of the rear wheel tire spray to visually anchor the car to the road.
+2. **Implement Directional Streetlamp Light Volumes:** Replace the circular point pools at the lamppost bases with forward-projecting, angled light cones across the asphalt surface so traffic and the player actually drive *through* distinct pools of light.
+3. **Enhance Speed Trajectory & Motion FX:** At 210 KM/H, the motion read is weak. Align the rain streak angles strictly to perspective velocity, add subtle radial speed lines/edge-blur on the peripheral screen borders, and stretch the lane-marker dashes along the road vector.
+4. **Clean up Horizon Overlay & Sun Silhouette:** Increase contrast/readability on the "SECTOR 02" banner (or switch to an additive blend mode with clean outlines), and fix the silhouette clipping where dark palm fronds clumsily overlap the glowing synthwave sun.

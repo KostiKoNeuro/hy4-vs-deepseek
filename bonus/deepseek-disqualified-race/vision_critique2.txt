@@ -1,0 +1,24 @@
+The visual foundation nails the synthwave palette and typography, but it reads more like an interactive vector mockup than a high-octane 3D arcade racer.
+
+---
+
+### Art Direction Critique
+
+*   **Vehicle Grounding & Presence:** The hero car feels weightless and disconnected. There is zero contact shadow beneath the chassis, no tire tread contact patches, and no road spray or rim glow. The lighting on the car body is flat 2D gradient work rather than specular reflections matching the low-slung sun or neon street fixtures.
+*   **Road & Environmental Depth:** The road surface lacks texture, micro-roughness, and wet asphalt sheen. Instead of screen-space wet reflections, the road features an artificial triangular gradient wedge down the center that flattens perspective. The horizon wireframe grid abruptly clips behind the city silhouettes, breaking atmospheric perspective.
+*   **Traffic Readability & Scale:** Distant traffic cars turn into muddy, unreadable silhouettes. Their taillights lack bloom intensity, making depth perception and closing speed difficult to gauge at 200+ km/h.
+*   **Lighting, Shading & FX:** The rain streaks are uniform, static screen-space scratches—they don't streak along vehicle motion vectors or interact with lights. The neon barrier glow is an inconsistent hard vector stroke without volumetric falloff onto the asphalt.
+*   **HUD & UI Presentation:** The UI typography and layout are crisp and arcade-ready, but the gameplay HUD lacks impact. The speed gauge (`205 KM/H`) and nitro meter sit passively in the corners without motion blur, chromatic aberration, or dynamic feedback. In the menu frame, the "DRIVER BRIEF" card feels slightly cramped next to the car.
+
+---
+
+### Top 8 Priority Improvements
+
+1.  **Add Dynamic Contact Shadows & Tire Grounding:** Place a soft, tight ambient occlusion shadow directly under the tires and chassis to anchor the vehicle to the road surface.
+2.  **Rework Wet Road Shader & Screen-Space Reflections:** Replace the static center triangular road gradient with an asphalt normal map, wet puddle roughness, and elongated vertical reflections for taillights, neon barriers, and the sun.
+3.  **Boost Traffic Silhouette Readability:** Add intense emissive red/amber bloom to traffic taillights and subtle rim lighting to distant cars so players can instantly parse lane obstacles.
+4.  **Integrate Velocity-Aligned Rain & Particle FX:** Replace screen-space static rain streaks with camera-depth rain streaks that flare through light sources, paired with rear-tire water spray/mist trails.
+5.  **Add Car Lighting Reaction to the Sun/World:** Introduce specular highlights and rim glow on the car’s rear window and roof curvature responding to the bright neon sun and passing overhead lampposts.
+6.  **Unify Horizon & Atmospheric Fog:** Add a subtle low-lying ground fog/haze gradient at the base of the skyline buildings to blend the road vanishing point naturally into the backdrop without sharp polygon cutoffs.
+7.  **Juice HUD Speed & Nitro Feedback:** Introduce subtle camera FOV pulse, edge-of-screen chromatic aberration, and wind streak VFX as speed crosses 200 km/h and nitro engages.
+8.  **Add Exhaust / Taillight Bloom:** Give the player car’s thin rear LED strip and exhaust tips a rich multi-pass bloom effect with subtle light bounce cast backward onto the road plane.
