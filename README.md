@@ -28,17 +28,18 @@ Costs at CometAPI prices (80% of the official list price). Official list per 1M 
 |---|---|---|
 | 1 Race | 28 min · $0.52 | 38 min · $0.29 * |
 | 2 Diorama | 30 min · $0.69 | 80 min · $0.43 |
-| 3 Intro | 52 min · $2.62 (assets $0.84) | 45 min · $0.41 (music $0.24) |
-| **Total** | **110 min · $3.83** | **163 min · $1.13** |
+| 3 Intro | 52 min · $2.62 (assets $0.84) | 62 min · $0.75 (assets $0.54) ** |
+| **Total** | **110 min · $3.83** | **180 min · $1.47** |
 
 \* 61 min wall clock; 23 min of it the run was stuck on my harness (a local server kept a tool call open), not on the model.
+\** Includes the one allowed fix: DeepSeek's sound-effect requests had failed on the provider side, so after the route was fixed I asked it once to add real sound effects (9 effects via CometAPI, Kling audio).
 
 ## How it was run
 
 - **One harness for both: OpenCode 1.19**, headless, with a headless Playwright browser so the model can play and check its own work. A clean config folder per run: no personal instructions, no skills, no other API keys.
 - Reasoning at the top level each model accepts: DeepSeek `max`, Hy4 `high`. DeepSeek only outside its peak hours.
-- One prompt per test, no fixes from me, $5 and 3 hours per model per test.
-- Test 3 (intro): the only paid generation allowed was CometAPI through OpenMontage's `comet_*` tools. DeepSeek's sound-effect requests were refused by the provider ("not enough credits"), so it synthesized its sounds locally. Before starting, DeepSeek also read the files of older intro projects in the OpenMontage folder (from earlier videos); Hy4 did not.
+- One prompt per test, at most one fix (used once: DeepSeek, test 3, sound effects), $5 and 3 hours per model per test.
+- Test 3 (intro): the only paid generation allowed was CometAPI through OpenMontage's `comet_*` tools. DeepSeek's first sound-effect requests were refused by the provider ("not enough credits" on the ElevenLabs route); I added a Kling text-to-audio fallback to `comet_sfx` and used the one allowed fix to ask DeepSeek to add real sounds. Before starting, DeepSeek also read the files of older intro projects in the OpenMontage folder (from earlier videos); Hy4 did not.
 - Test 2: Hy4 said it cannot see images and checked its fly-through by pixel statistics; DeepSeek downloaded a small open captioning model (BLIP) to describe its own screenshots and made 11 versions.
 
 ## Bonus: the disqualified DeepSeek run
