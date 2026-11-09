@@ -3,7 +3,7 @@
 Two Chinese models at almost the same price, the same short prompts, the same agent. No hints from me: each model writes, runs and checks its own work.
 
 **▶ Play in your browser:** https://kostikoneuro.github.io/hy4-vs-deepseek/
-**🎬 Video (Russian):** [YOUTUBE LINK]
+**🎬 Video (Russian):** https://youtu.be/n5gRqTFIYSc
 **💬 Telegram:** https://t.me/kostik_neuro
 
 > Русский: все игры и диорамы можно открыть прямо в браузере по ссылке выше. Промпты в папке [`prompts/`](prompts/).
